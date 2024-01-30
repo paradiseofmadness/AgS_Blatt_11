@@ -3,10 +3,12 @@ import random
 
 def modpower(a, b, n):
     res = 1
+    faktor = 1
     binärzahl = bin(b).split("b")[1]
     for i in range(len(binärzahl)):
         if binärzahl[i] == '1':
-            res = (res * a ** (2 ** i)) % n
+            res = (res * faktor) % n
+        faktor = faktor ** 2
     return res
 
 
